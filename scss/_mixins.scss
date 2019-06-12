@@ -1,0 +1,29 @@
+@mixin title($size, $color) {
+  font-family: $title-font;
+  color: $color;
+  font-size: $size;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+@mixin button($width, $height) {
+  width: $width;
+  height: $height;
+  border-radius: $height;
+  background-color: $yellow;
+  border: 2px solid $yellow;
+  display: block;
+  color: white;
+  font-size: $height / 2.5;
+  line-height: $height;
+  text-transform: uppercase;
+  font-family: $title-font;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  &:hover {
+    background-color: transparent;
+    color: $yellow;
+  }
+}
