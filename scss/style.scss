@@ -6,15 +6,23 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
 .header {
+  width: 100%;
   height: 70px;
   background-color: white;
   padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  position: fixed;
+  top: 0;
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   &__logo {
     width: 100px;
   }
@@ -24,7 +32,7 @@
     position: relative;
   }
   &__navigation {
-    display: none;
+    position: fixed;
   }
 }
 
@@ -51,7 +59,45 @@
   }
 }
 
+.navigation {
+  opacity: 0;
+  z-index: 2;
+  display: block;
+  top: 70px;
+  left: 0;
+  height: 150px;
+  width: 100%;
+  background-color: white;
+  transition: opacity 0.3s ease-in;
+  &__item {
+    @include text;
+    background-color: white;
+    color: $dark;
+    height: 50px;
+    line-height: 50px;
+    list-style: none;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  &--active {
+    opacity: 1;
+  }
+  &__link {
+    display: block;
+    &:active,
+    &:focus,
+    &:visited {
+      color: $dark;
+    }
+    &:hover {
+      color: $yellow;
+      background: $grey;
+    }
+  }
+}
+
 .hero {
+  margin-top: 70px;
   height: calc(100vh - 70px);
   background-image: url(../img/grass.jpg);
   background-size: cover;
@@ -60,13 +106,21 @@
   flex-direction: column;
   align-items: flex-end;
   padding: 0 30px;
+  overflow-x: hidden;
   &__title {
-    @include title(30px, $dark);
+    @include title(36px, $dark);
     width: 100%;
     margin: 60px 0 20px 0;
     text-align: right;
+    text-shadow: 2px 2px 2px rgba(42, 42, 42, 0.31);
   }
   &__action {
     @include button(120px, 40px);
+  }
+  &__photo {
+    width: 400px;
+    margin-top: 30px;
+    position: relative;
+    right: -100px;
   }
 }

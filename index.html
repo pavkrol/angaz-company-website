@@ -13,21 +13,29 @@
   </head>
   <body>
     <header class="header">
-      <img
-        src="./img/logo2.gif"
-        alt="company logo an-gaz dystrybucja gazu"
-        class="header__logo"
-      />
-      <button class="header__menu menu">
-        <span class="menu__line"></span>
-        <span class="menu__line"></span>
-        <span class="menu__line"></span>
-      </button>
-      <nav class="header__navigation navigation">
+      <div class="header__wrapper">
+        <img
+          src="./img/logo2.gif"
+          alt="company logo an-gaz dystrybucja gazu"
+          class="header__logo"
+        />
+        <button id="header__menu" class="header__menu menu">
+          <span class="menu__line"></span>
+          <span class="menu__line"></span>
+          <span class="menu__line"></span>
+        </button>
+      </div>
+      <nav id="header__navigation" class="header__navigation navigation">
         <ul>
-          <li class="navigation__item">oferta</li>
-          <li class="navigation__item">współpraca</li>
-          <li class="navigation__item">kontakt</li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">oferta</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">współpraca</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link">kontakt</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -35,7 +43,9 @@
       <section class="hero">
         <h1 class="hero__title">Twój dostawca gazu LPG</h1>
         <a href="#" class="hero__action">Zamów</a>
+        <img src="./img/butle.png" alt="gas cylinders" class="hero__photo" />
       </section>
     </main>
+    <script src="./scripts/mobile_menu.js"></script>
   </body>
 </html>

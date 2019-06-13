@@ -3,8 +3,7 @@
   color: $color;
   font-size: $size;
   text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-weight: 900;
 }
 
 @mixin button($width, $height) {
@@ -12,7 +11,7 @@
   height: $height;
   border-radius: $height;
   background-color: $yellow;
-  border: 2px solid $yellow;
+  border: none;
   display: block;
   color: white;
   font-size: $height / 2.5;
@@ -22,8 +21,14 @@
   text-align: center;
   font-weight: 700;
   letter-spacing: 0.1em;
+  box-shadow: 1px 1px 6px 0px rgba(66, 66, 66, 0.62);
   &:hover {
-    background-color: transparent;
-    color: $yellow;
+    background-color: #d19900;
   }
+}
+
+@mixin text {
+  font-family: $text-font;
+  color: $dark;
+  font-weight: 400;
 }
