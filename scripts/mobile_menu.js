@@ -3,4 +3,5 @@ const nav = document.getElementById("header__navigation");
 
 menu.addEventListener("click", e => {
   nav.classList.toggle("navigation--active");
+  menu.classList.toggle("menu--open");
 });

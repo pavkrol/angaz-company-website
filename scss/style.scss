@@ -1,3 +1,4 @@
+@import "variables";
 @import "fonts";
 @import "colors";
 @import "mixins";
@@ -15,6 +16,7 @@
   background-color: white;
   padding: 0 20px;
   position: fixed;
+  z-index: 2;
   top: 0;
   &__wrapper {
     width: 100%;
@@ -34,6 +36,15 @@
   &__navigation {
     position: fixed;
   }
+  @media (min-width: 800px) {
+    padding: 0 12%;
+    &__menu {
+      display: none;
+    }
+    &__navigation {
+      position: relative;
+    }
+  }
 }
 
 .menu {
@@ -47,22 +58,40 @@
     background-color: black;
     border-radius: 3px;
     left: 7px;
+    transition: 0.3s ease-in-out;
   }
   &__line:nth-of-type(1) {
     top: 14px;
   }
-  &__line:nth-of-type(2) {
+  &__line:nth-of-type(2),
+  &__line:nth-of-type(3) {
     top: 23px;
   }
-  &__line:nth-of-type(3) {
+  &__line:nth-of-type(4) {
     top: 32px;
+  }
+  &--open &__line:nth-of-type(1) {
+    top: 23px;
+    width: 0%;
+    left: 50%;
+  }
+  &--open &__line:nth-of-type(2) {
+    transform: rotate(45deg);
+  }
+  &--open &__line:nth-of-type(3) {
+    transform: rotate(-45deg);
+  }
+  &--open &__line:nth-of-type(4) {
+    top: 23px;
+    width: 0%;
+    left: 50%;
   }
 }
 
 .navigation {
   opacity: 0;
-  z-index: 2;
   display: block;
+  visibility: hidden;
   top: 70px;
   left: 0;
   height: 150px;
@@ -80,6 +109,7 @@
     text-transform: uppercase;
   }
   &--active {
+    visibility: visible;
     opacity: 1;
   }
   &__link {
@@ -92,6 +122,30 @@
     &:hover {
       color: $yellow;
       background: $grey;
+    }
+  }
+  @media (min-width: 800px) {
+    visibility: visible;
+    display: flex;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    height: 70px;
+    ul {
+      display: flex;
+      width: 100%;
+      justify-content: flex-end;
+    }
+    &__item {
+      margin-right: 50px;
+      height: 70px;
+      line-height: 70px;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+    &__link {
+      padding: 0 12px;
     }
   }
 }
@@ -107,12 +161,36 @@
   align-items: flex-end;
   padding: 0 30px;
   overflow-x: hidden;
+  @media (min-width: 500px) {
+    padding: 0 12%;
+  }
   &__title {
-    @include title(36px, $dark);
+    @include title(30px, 60px, $dark);
     width: 100%;
     margin: 60px 0 20px 0;
     text-align: right;
     text-shadow: 2px 2px 2px rgba(42, 42, 42, 0.31);
+    position: relative;
+    p {
+      position: relative;
+      z-index: 1;
+      &:after {
+        content: "";
+        display: block;
+        background-color: $yellow;
+        position: absolute;
+        height: 0.3em;
+        bottom: 4px;
+        right: -0.3em;
+        z-index: -1;
+      }
+      &:nth-of-type(1):after {
+        width: 8.5em;
+      }
+      &:nth-of-type(2):after {
+        width: 5em;
+      }
+    }
   }
   &__action {
     @include button(120px, 40px);
