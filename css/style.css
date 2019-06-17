@@ -33,6 +33,10 @@
         display: none; }
       .header__navigation {
         position: relative; } }
+  @media (min-width: 1200px) {
+    .header {
+      background-color: transparent;
+      color: white; } }
 
 .menu {
   border: none;
@@ -116,6 +120,19 @@
           margin-right: 0; }
       .navigation__link {
         padding: 0 12px; } }
+  @media (min-width: 1200px) {
+    .navigation {
+      background: transparent;
+      color: white; }
+      .navigation__item {
+        background: transparent;
+        color: white;
+        letter-spacing: 0.1em; }
+      .navigation__link:active, .navigation__link:focus, .navigation__link:visited {
+        color: white; }
+      .navigation__link:hover {
+        color: #ffbb00;
+        background: transparent; } }
 
 .hero {
   margin-top: 70px;
@@ -128,9 +145,6 @@
   align-items: flex-end;
   padding: 0 30px;
   overflow-x: hidden; }
-  @media (min-width: 500px) {
-    .hero {
-      padding: 0 12%; } }
   .hero__title {
     font-family: "Roboto", sans-serif;
     color: #000546;
@@ -188,3 +202,41 @@
     margin-top: 30px;
     position: relative;
     right: -100px; }
+  @media (min-width: 500px) {
+    .hero {
+      padding: 0 12%; } }
+  @media (min-width: 1200px) {
+    .hero {
+      background-image: url(../img/grass2.jpg);
+      margin-top: 0;
+      padding-top: 150px;
+      height: 100vh;
+      flex-wrap: wrap;
+      align-items: flex-start; }
+      .hero__title {
+        flex-basis: 35%;
+        width: 60%;
+        text-align: left; }
+        .hero__title p:after {
+          left: -0.1em; }
+      .hero__photo {
+        width: 500px;
+        right: 0; }
+      .hero__action {
+        width: 150px;
+        height: 50px;
+        border-radius: 50px;
+        background-color: #ffbb00;
+        border: none;
+        display: block;
+        color: white;
+        font-size: 20px;
+        line-height: 50px;
+        text-transform: uppercase;
+        font-family: "Roboto", sans-serif;
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        box-shadow: 1px 1px 6px 0px rgba(66, 66, 66, 0.62); }
+        .hero__action:hover {
+          background-color: #d19900; } }
