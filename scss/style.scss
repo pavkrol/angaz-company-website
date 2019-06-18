@@ -251,3 +251,53 @@
     }
   }
 }
+
+.slider {
+  padding: 50px 20px;
+  position: relative;
+  &__item {
+  }
+  &__photo {
+    width: 100%;
+    object-fit: contain;
+    height: calc(100vw / 2);
+    background-color: $grey;
+  }
+  &__infobox {
+    position: absolute;
+    bottom: 30px;
+    right: 10px;
+  }
+}
+
+.infobox {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $yellow;
+  height: calc(100vw / 2.5);
+  &__title {
+    @include title(18px, 35px, white);
+    font-weight: 500;
+    padding: 20px 0 30px 0;
+    position: relative;
+    &:after {
+      display: block;
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 2px;
+      background-color: white;
+      left: calc(50% - 20px);
+      bottom: 14px;
+    }
+  }
+  &__description {
+    display: none;
+  }
+  &__more {
+    @include button_inverted(110px, 36px);
+  }
+}

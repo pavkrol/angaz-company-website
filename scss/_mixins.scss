@@ -3,7 +3,7 @@
   font-family: $title-font;
   color: $color;
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 600;
 }
 
 @mixin button($width, $height) {
@@ -24,6 +24,27 @@
   box-shadow: 1px 1px 6px 0px rgba(66, 66, 66, 0.62);
   &:hover {
     background-color: #d19900;
+  }
+}
+
+@mixin button_inverted($width, $height) {
+  width: $width;
+  height: $height;
+  border-radius: $height;
+  background-color: transparent;
+  border: 2px solid white;
+  display: block;
+  color: white;
+  font-size: $height / 2.5;
+  line-height: $height;
+  text-transform: uppercase;
+  font-family: $title-font;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  &:hover {
+    background-color: white;
+    color: $yellow;
   }
 }
 
