@@ -4,6 +4,9 @@
   text-decoration: none;
   box-sizing: border-box; }
 
+body {
+  overflow-x: hidden; }
+
 .header {
   width: 100%;
   height: 70px;
@@ -242,8 +245,34 @@
           background-color: #d19900; } }
 
 .slider {
-  padding: 50px 20px;
-  position: relative; }
+  padding: 0px 20px;
+  position: relative;
+  margin-top: 30px; }
+  .slider__bttn {
+    position: absolute;
+    height: calc(100vw / 2);
+    width: 10%;
+    background-color: transparent;
+    opacity: 0.15;
+    border: none;
+    z-index: 2;
+    cursor: pointer; }
+    .slider__bttn:hover {
+      background-color: black; }
+    .slider__bttn--left {
+      left: 20px; }
+    .slider__bttn--right {
+      right: 10px; }
+  .slider__item {
+    width: calc(100% - 40px);
+    position: absolute;
+    top: 0;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0%); }
+    .slider__item--right {
+      transform: translateX(110%); }
+    .slider__item--left {
+      transform: translateX(-110%); }
   .slider__photo {
     width: 100%;
     object-fit: contain;
@@ -251,8 +280,33 @@
     background-color: #f5f5f5; }
   .slider__infobox {
     position: absolute;
-    bottom: 30px;
-    right: 10px; }
+    bottom: -10px;
+    right: -10px; }
+  @media (min-width: 800px) {
+    .slider__item {
+      width: 60%;
+      margin: 0 20%;
+      top: -200px;
+      z-index: 1; }
+      .slider__item--right {
+        transform: translateX(35%) scale(0.6);
+        z-index: 0;
+        filter: blur(1px); }
+      .slider__item--left {
+        transform: translateX(-35%) scale(0.6);
+        z-index: 0;
+        filter: blur(1px); }
+    .slider__photo {
+      width: 60%;
+      height: calc(100vw / 3); }
+    .slider__bttn--left {
+      left: calc(20% + 20px);
+      height: calc(100vw / 3);
+      top: -200px; }
+    .slider__bttn--right {
+      right: calc(20% - 30px);
+      height: calc(100vw / 3 + 30px);
+      top: -216px; } }
 
 .infobox {
   width: 50%;
@@ -269,7 +323,8 @@
     font-weight: 600;
     font-weight: 500;
     padding: 20px 0 30px 0;
-    position: relative; }
+    position: relative;
+    text-align: center; }
     .infobox__title {
       font-size: 18px; }
       @media screen and (min-width: 320px) {
@@ -307,3 +362,7 @@
     .infobox__more:hover {
       background-color: white;
       color: #ffbb00; }
+  @media (min-width: 800px) {
+    .infobox {
+      width: 45%;
+      height: calc(100vw / 3 + 30px); } }
