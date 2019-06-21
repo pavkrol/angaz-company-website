@@ -251,7 +251,7 @@ body {
   .slider__bttn {
     position: absolute;
     height: calc(100vw / 2);
-    width: 10%;
+    width: 8%;
     background-color: transparent;
     opacity: 0.15;
     border: none;
@@ -282,11 +282,14 @@ body {
     position: absolute;
     bottom: -10px;
     right: -10px; }
+  .slider__dots {
+    width: 100%;
+    margin: calc(100vw / 2 + 60px) 10px 20px 10px; }
   @media (min-width: 800px) {
     .slider__item {
       width: 60%;
       margin: 0 20%;
-      top: -200px;
+      top: -120px;
       z-index: 1; }
       .slider__item--right {
         transform: translateX(35%) scale(0.6);
@@ -302,11 +305,26 @@ body {
     .slider__bttn--left {
       left: calc(20% + 20px);
       height: calc(100vw / 3);
-      top: -200px; }
+      top: -120px; }
     .slider__bttn--right {
       right: calc(20% - 30px);
       height: calc(100vw / 3 + 30px);
-      top: -216px; } }
+      top: -136px; }
+    .slider__dots {
+      margin-top: calc(100vw / 3 - 40px); } }
+
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .dots__item {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #c0c0c0;
+    margin: 0 5px; }
+    .dots__item--active {
+      background-color: #ffbb00; }
 
 .infobox {
   width: 50%;
@@ -322,14 +340,14 @@ body {
     text-transform: uppercase;
     font-weight: 600;
     font-weight: 500;
-    padding: 20px 0 30px 0;
+    padding: 5px 0 30px 0;
     position: relative;
     text-align: center; }
     .infobox__title {
-      font-size: 18px; }
+      font-size: 14px; }
       @media screen and (min-width: 320px) {
         .infobox__title {
-          font-size: calc( 18px + 17 * ((100vw - 320px) / 880)); } }
+          font-size: calc( 14px + 21 * ((100vw - 320px) / 880)); } }
       @media screen and (min-width: 1200px) {
         .infobox__title {
           font-size: 35px; } }
@@ -345,15 +363,15 @@ body {
   .infobox__description {
     display: none; }
   .infobox__more {
-    width: 110px;
-    height: 36px;
-    border-radius: 36px;
+    width: 90px;
+    height: 30px;
+    border-radius: 30px;
     background-color: transparent;
     border: 2px solid white;
     display: block;
     color: white;
-    font-size: 14.4px;
-    line-height: 36px;
+    font-size: 12px;
+    line-height: 30px;
     text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
     text-align: center;
@@ -362,7 +380,41 @@ body {
     .infobox__more:hover {
       background-color: white;
       color: #ffbb00; }
+    @media (min-width: 400px) {
+      .infobox__more {
+        width: 110px;
+        height: 36px;
+        border-radius: 36px;
+        background-color: transparent;
+        border: 2px solid white;
+        display: block;
+        color: white;
+        font-size: 14.4px;
+        line-height: 36px;
+        text-transform: uppercase;
+        font-family: "Montserrat", sans-serif;
+        text-align: center;
+        font-weight: 700;
+        letter-spacing: 0.1em; }
+        .infobox__more:hover {
+          background-color: white;
+          color: #ffbb00; } }
   @media (min-width: 800px) {
     .infobox {
       width: 45%;
-      height: calc(100vw / 3 + 30px); } }
+      height: calc(100vw / 3 + 30px); }
+      .infobox__description {
+        display: block;
+        color: white;
+        padding: 20px 30px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        line-height: 28px; }
+        .infobox__description {
+          font-size: 12px; } }
+      @media screen and (min-width: 800px) and (min-width: 800px) {
+        .infobox__description {
+          font-size: calc( 12px + 6 * ((100vw - 800px) / 400)); } }
+      @media screen and (min-width: 800px) and (min-width: 1200px) {
+        .infobox__description {
+          font-size: 18px; } }

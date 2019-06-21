@@ -263,7 +263,7 @@ body {
   &__bttn {
     position: absolute;
     height: calc(100vw / 2);
-    width: 10%;
+    width: 8%;
     background-color: transparent;
     opacity: 0.15;
     border: none;
@@ -303,11 +303,15 @@ body {
     bottom: -10px;
     right: -10px;
   }
+  &__dots {
+    width: 100%;
+    margin: calc(100vw / 2 + 60px) 10px 20px 10px;
+  }
   @media (min-width: 800px) {
     &__item {
       width: 60%;
       margin: 0 20%;
-      top: -200px;
+      top: -120px;
       z-index: 1;
       &--right {
         transform: translateX(35%) scale(0.6);
@@ -328,13 +332,32 @@ body {
       &--left {
         left: calc(20% + 20px);
         height: calc(100vw / 3);
-        top: -200px;
+        top: -120px;
       }
       &--right {
         right: calc(20% - 30px);
         height: calc(100vw / 3 + 30px);
-        top: -216px;
+        top: -136px;
       }
+    }
+    &__dots {
+      margin-top: calc(100vw / 3 - 40px);
+    }
+  }
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__item {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $dark_grey;
+    margin: 0 5px;
+    &--active {
+      background-color: $yellow;
     }
   }
 }
@@ -348,9 +371,9 @@ body {
   background-color: $yellow;
   height: calc(100vw / 2.5);
   &__title {
-    @include title(18px, 35px, white);
+    @include title(14px, 35px, white);
     font-weight: 500;
-    padding: 20px 0 30px 0;
+    padding: 5px 0 30px 0;
     position: relative;
     text-align: center;
     &:after {
@@ -368,10 +391,22 @@ body {
     display: none;
   }
   &__more {
-    @include button_inverted(110px, 36px);
+    @include button_inverted(90px, 30px);
+    @media (min-width: 400px) {
+      @include button_inverted(110px, 36px);
+    }
   }
   @media (min-width: 800px) {
     width: 45%;
     height: calc(100vw / 3 + 30px);
+    &__description {
+      @include fluid-type(800px, 1200px, 12px, 18px);
+      display: block;
+      color: white;
+      padding: 20px 30px;
+      font-family: $text-font;
+      font-weight: 400;
+      line-height: 28px;
+    }
   }
 }
