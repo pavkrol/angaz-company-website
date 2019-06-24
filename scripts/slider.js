@@ -4,7 +4,7 @@ const bttn_right = document.getElementById("slider__bttn--right");
 const items = document.querySelectorAll(".slider__item");
 const dots = document.querySelectorAll(".dots__item");
 
-let current_slide = 0,
+let current_slide = 1,
   swipe_start,
   swipe_end;
 

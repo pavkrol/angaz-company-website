@@ -84,7 +84,6 @@ body {
   transition: opacity 0.3s ease-in; }
   .navigation__item {
     font-family: "Roboto", sans-serif;
-    color: #000546;
     font-weight: 400;
     background-color: white;
     color: #000546;
@@ -340,7 +339,7 @@ body {
     text-transform: uppercase;
     font-weight: 600;
     font-weight: 500;
-    padding: 5px 0 30px 0;
+    padding: 5px 10px 30px 10px;
     position: relative;
     text-align: center; }
     .infobox__title {
@@ -402,19 +401,239 @@ body {
   @media (min-width: 800px) {
     .infobox {
       width: 45%;
-      height: calc(100vw / 3 + 30px); }
+      height: calc(100vw / 3 + 30px); } }
+  @media (min-width: 1200px) {
+    .infobox__title {
+      padding: 5px 30px 30px 30px;
+      text-align: left; }
+      .infobox__title:after {
+        width: 50px;
+        left: 30px;
+        bottom: 5px; }
+    .infobox__description {
+      display: block;
+      color: white;
+      padding: 20px 30px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      line-height: 28px;
+      text-align: left; }
       .infobox__description {
-        display: block;
-        color: white;
-        padding: 20px 30px;
-        font-family: "Roboto", sans-serif;
-        font-weight: 400;
-        line-height: 28px; }
-        .infobox__description {
-          font-size: 12px; } }
-      @media screen and (min-width: 800px) and (min-width: 800px) {
-        .infobox__description {
-          font-size: calc( 12px + 6 * ((100vw - 800px) / 400)); } }
-      @media screen and (min-width: 800px) and (min-width: 1200px) {
-        .infobox__description {
-          font-size: 18px; } }
+        font-size: 14px; } }
+    @media screen and (min-width: 1200px) and (min-width: 1200px) {
+      .infobox__description {
+        font-size: calc( 14px + 6 * ((100vw - 1200px) / 400)); } }
+    @media screen and (min-width: 1200px) and (min-width: 1600px) {
+      .infobox__description {
+        font-size: 20px; } }
+
+.services {
+  padding: 30px 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px repeat(3, 1fr) auto; }
+  .services__wrapper {
+    position: relative;
+    margin-bottom: 60px; }
+    .services__wrapper:after {
+      display: block;
+      content: "";
+      width: 80%;
+      height: 2px;
+      background-color: #ffbb00;
+      bottom: -30px;
+      left: 10%;
+      position: absolute; }
+    .services__wrapper:last-of-type {
+      margin-bottom: 0; }
+    .services__wrapper:last-of-type:after {
+      display: none; }
+  .services__title {
+    font-family: "Montserrat", sans-serif;
+    color: #000546;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: left;
+    position: relative;
+    padding-left: 10px; }
+    .services__title {
+      font-size: 30px; }
+      @media screen and (min-width: 320px) {
+        .services__title {
+          font-size: calc( 30px + 15 * ((100vw - 320px) / 880)); } }
+      @media screen and (min-width: 1200px) {
+        .services__title {
+          font-size: 45px; } }
+    .services__title:after {
+      content: "";
+      display: inline-block;
+      background-color: #ffbb00;
+      width: 1.2em;
+      height: 1.2em;
+      position: absolute;
+      left: 5px;
+      z-index: -1; }
+  .services__subtitle {
+    font-family: "Roboto", sans-serif;
+    color: #000546;
+    font-weight: 600;
+    margin-bottom: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 2.5em;
+    display: flex;
+    align-items: center; }
+    .services__subtitle {
+      font-size: 24px; }
+      @media screen and (min-width: 320px) {
+        .services__subtitle {
+          font-size: calc( 24px + 6 * ((100vw - 320px) / 880)); } }
+      @media screen and (min-width: 1200px) {
+        .services__subtitle {
+          font-size: 30px; } }
+    .services__subtitle--delivery, .services__subtitle--shop {
+      background-position: left;
+      text-align: right;
+      padding-left: 25%; }
+    .services__subtitle--cylinder, .services__subtitle--heaters {
+      background-position: right;
+      text-align: left;
+      padding-right: 25%; }
+    .services__subtitle--delivery {
+      background-image: url(../img/truck.svg); }
+    .services__subtitle--cylinder {
+      background-image: url(../img/gas.svg); }
+    .services__subtitle--shop {
+      background-image: url(../img/shop.svg); }
+    .services__subtitle--heaters {
+      background-image: url(../img/fire.svg); }
+  .services__text {
+    font-family: "Roboto", sans-serif;
+    color: #000546;
+    font-weight: 400; }
+    .services__text {
+      font-size: 16px; }
+      @media screen and (min-width: 320px) {
+        .services__text {
+          font-size: calc( 16px + 4 * ((100vw - 320px) / 880)); } }
+      @media screen and (min-width: 1200px) {
+        .services__text {
+          font-size: 20px; } }
+  @media (min-width: 750px) {
+    .services {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 60px repeat(2, 1fr);
+      grid-gap: 7%; }
+      .services__title {
+        grid-column: span 2; }
+      .services__subtitle {
+        background-position: right;
+        text-align: left;
+        padding: 0 25% 0 0; } }
+  @media (min-width: 1400px) {
+    .services {
+      padding: 50px 10%;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 60px 1fr;
+      grid-gap: 4%; }
+      .services__wrapper {
+        margin-bottom: 0; }
+        .services__wrapper:after {
+          width: 1px;
+          height: 300px;
+          top: 50%;
+          left: 106%;
+          transform: translateY(-50%); }
+      .services__wrapper:last-of-type:after {
+        display: none; }
+      .services__title {
+        grid-column: span 4; }
+      .services__subtitle {
+        padding: 0;
+        height: 200px;
+        padding-top: 120px;
+        align-items: flex-start;
+        background: none;
+        position: relative;
+        text-align: center;
+        justify-content: center; }
+        .services__subtitle:before {
+          content: "";
+          display: block;
+          position: absolute;
+          height: 100px;
+          width: 100%;
+          top: 0;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: top center; }
+        .services__subtitle--delivery:before {
+          background-image: url(../img/truck.svg); }
+        .services__subtitle--cylinder:before {
+          background-image: url(../img/gas.svg); }
+        .services__subtitle--shop:before {
+          background-image: url(../img/shop.svg); }
+        .services__subtitle--heaters:before {
+          background-image: url(../img/fire.svg); } }
+
+.heaters {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px repeat(3, auto) 60vw; }
+  .heaters__title {
+    font-family: "Montserrat", sans-serif;
+    color: #000546;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: left;
+    position: relative;
+    padding-left: 10px; }
+    .heaters__title {
+      font-size: 30px; }
+      @media screen and (min-width: 320px) {
+        .heaters__title {
+          font-size: calc( 30px + 15 * ((100vw - 320px) / 880)); } }
+      @media screen and (min-width: 1200px) {
+        .heaters__title {
+          font-size: 45px; } }
+    .heaters__title:after {
+      content: "";
+      display: inline-block;
+      background-color: #ffbb00;
+      width: 1.2em;
+      height: 1.2em;
+      position: absolute;
+      left: 5px;
+      top: 0;
+      z-index: -1; }
+  .heaters__text {
+    margin-bottom: 30px;
+    font-family: "Roboto", sans-serif;
+    color: #000546;
+    font-weight: 400; }
+    .heaters__text {
+      font-size: 16px; }
+      @media screen and (min-width: 320px) {
+        .heaters__text {
+          font-size: calc( 16px + 4 * ((100vw - 320px) / 880)); } }
+      @media screen and (min-width: 1200px) {
+        .heaters__text {
+          font-size: 20px; } }
+  .heaters__photo {
+    background: url(../img/heaters.jpg) no-repeat;
+    background-size: cover;
+    position: relative; }
+    .heaters__photo:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #ffbb00;
+      right: -10px;
+      bottom: -10px;
+      z-index: -1; }
+  @media (min-width: 480px) {
+    .heaters {
+      grid-template-rows: 60px repeat(3, auto) 60vw; } }

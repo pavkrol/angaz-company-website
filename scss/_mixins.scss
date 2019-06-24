@@ -6,6 +6,13 @@
   font-weight: 600;
 }
 
+@mixin subtitle($min, $max, $color) {
+  @include fluid-type($min-vw, $max-vw, $min, $max);
+  font-family: $text-font;
+  color: $color;
+  font-weight: 600;
+}
+
 @mixin button($width, $height) {
   width: $width;
   height: $height;
@@ -48,9 +55,10 @@
   }
 }
 
-@mixin text {
+@mixin text($min, $max, $color) {
+  @include fluid-type($min-vw, $max-vw, $min, $max);
   font-family: $text-font;
-  color: $dark;
+  color: $color;
   font-weight: 400;
 }
 
@@ -78,4 +86,16 @@
       }
     }
   }
+}
+
+@mixin icons {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100px;
+  width: 100%;
+  top: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
 }

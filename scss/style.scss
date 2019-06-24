@@ -107,7 +107,8 @@ body {
   background-color: white;
   transition: opacity 0.3s ease-in;
   &__item {
-    @include text;
+    font-family: $text-font;
+    font-weight: 400;
     background-color: white;
     color: $dark;
     height: 50px;
@@ -373,7 +374,7 @@ body {
   &__title {
     @include title(14px, 35px, white);
     font-weight: 500;
-    padding: 5px 0 30px 0;
+    padding: 5px 10px 30px 10px;
     position: relative;
     text-align: center;
     &:after {
@@ -399,14 +400,221 @@ body {
   @media (min-width: 800px) {
     width: 45%;
     height: calc(100vw / 3 + 30px);
+  }
+  @media (min-width: 1200px) {
+    &__title {
+      padding: 5px 30px 30px 30px;
+      text-align: left;
+      &:after {
+        width: 50px;
+        left: 30px;
+        bottom: 5px;
+      }
+    }
     &__description {
-      @include fluid-type(800px, 1200px, 12px, 18px);
+      @include fluid-type(1200px, 1600px, 14px, 20px);
       display: block;
       color: white;
       padding: 20px 30px;
       font-family: $text-font;
       font-weight: 400;
       line-height: 28px;
+      text-align: left;
     }
+  }
+}
+
+.services {
+  padding: 30px 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60px repeat(3, 1fr) auto;
+  &__wrapper {
+    position: relative;
+    margin-bottom: 60px;
+    &:after {
+      display: block;
+      content: "";
+      width: 80%;
+      height: 2px;
+      background-color: $yellow;
+      bottom: -30px;
+      left: 10%;
+      position: absolute;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    &:last-of-type:after {
+      display: none;
+    }
+  }
+
+  &__title {
+    @include title(30px, 45px, $dark);
+    text-align: left;
+    position: relative;
+    padding-left: 10px;
+    &:after {
+      content: "";
+      display: inline-block;
+      background-color: $yellow;
+      width: 1.2em;
+      height: 1.2em;
+      position: absolute;
+      left: 5px;
+      z-index: -1;
+    }
+  }
+  &__subtitle {
+    @include subtitle(24px, 30px, $dark);
+    margin-bottom: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 2.5em;
+    display: flex;
+    align-items: center;
+    &--delivery,
+    &--shop {
+      background-position: left;
+      text-align: right;
+      padding-left: 25%;
+    }
+    &--cylinder,
+    &--heaters {
+      background-position: right;
+      text-align: left;
+      padding-right: 25%;
+    }
+    &--delivery {
+      background-image: url(../img/truck.svg);
+    }
+    &--cylinder {
+      background-image: url(../img/gas.svg);
+    }
+    &--shop {
+      background-image: url(../img/shop.svg);
+    }
+    &--heaters {
+      background-image: url(../img/fire.svg);
+    }
+  }
+  &__text {
+    @include text(16px, 20px, $dark);
+  }
+  @media (min-width: 750px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 60px repeat(2, 1fr);
+    grid-gap: 7%;
+    &__title {
+      grid-column: span 2;
+    }
+    &__subtitle {
+      background-position: right;
+      text-align: left;
+      padding: 0 25% 0 0;
+    }
+  }
+  @media (min-width: 1400px) {
+    padding: 50px 10%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 60px 1fr;
+    grid-gap: 4%;
+    &__wrapper {
+      margin-bottom: 0;
+      &:after {
+        width: 1px;
+        height: 300px;
+        top: 50%;
+        left: 106%;
+        transform: translateY(-50%);
+      }
+    }
+    &__wrapper:last-of-type:after {
+      display: none;
+    }
+    &__title {
+      grid-column: span 4;
+    }
+    &__subtitle {
+      padding: 0;
+      height: 200px;
+      padding-top: 120px;
+      align-items: flex-start;
+      background: none;
+      position: relative;
+      text-align: center;
+      justify-content: center;
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 100px;
+        width: 100%;
+        top: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: top center;
+      }
+      &--delivery:before {
+        background-image: url(../img/truck.svg);
+      }
+      &--cylinder:before {
+        background-image: url(../img/gas.svg);
+      }
+      &--shop:before {
+        background-image: url(../img/shop.svg);
+      }
+      &--heaters:before {
+        background-image: url(../img/fire.svg);
+      }
+    }
+  }
+}
+
+.heaters {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px repeat(3, auto) 60vw;
+  &__title {
+    @include title(30px, 45px, $dark);
+    text-align: left;
+    position: relative;
+    padding-left: 10px;
+    &:after {
+      content: "";
+      display: inline-block;
+      background-color: $yellow;
+      width: 1.2em;
+      height: 1.2em;
+      position: absolute;
+      left: 5px;
+      top: 0;
+      z-index: -1;
+    }
+  }
+  &__text {
+    margin-bottom: 30px;
+    @include text(16px, 20px, $dark);
+  }
+  &__photo {
+    background: url(../img/heaters.jpg) no-repeat;
+    background-size: cover;
+    position: relative;
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: $yellow;
+      right: -10px;
+      bottom: -10px;
+      z-index: -1;
+    }
+  }
+  @media (min-width: 480px) {
+    grid-template-rows: 60px repeat(3, auto) 60vw;
   }
 }
