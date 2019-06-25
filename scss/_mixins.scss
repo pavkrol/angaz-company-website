@@ -21,7 +21,7 @@
   border: none;
   display: block;
   color: white;
-  font-size: $height / 2.5;
+  font-size: $height / 3;
   line-height: $height;
   text-transform: uppercase;
   font-family: $title-font;
@@ -29,6 +29,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   box-shadow: 1px 1px 6px 0px rgba(66, 66, 66, 0.62);
+  cursor: pointer;
   &:hover {
     background-color: #d19900;
   }
@@ -42,8 +43,8 @@
   border: 2px solid white;
   display: block;
   color: white;
-  font-size: $height / 2.5;
-  line-height: $height;
+  font-size: $height / 2.6;
+  line-height: $height - 2px;
   text-transform: uppercase;
   font-family: $title-font;
   text-align: center;
