@@ -395,7 +395,8 @@ body {
     font-family: "Montserrat", sans-serif;
     text-align: center;
     font-weight: 700;
-    letter-spacing: 0.1em; }
+    letter-spacing: 0.1em;
+    cursor: pointer; }
     .infobox__more:hover {
       background-color: white;
       color: #ffbb00; }
@@ -414,7 +415,8 @@ body {
         font-family: "Montserrat", sans-serif;
         text-align: center;
         font-weight: 700;
-        letter-spacing: 0.1em; }
+        letter-spacing: 0.1em;
+        cursor: pointer; }
         .infobox__more:hover {
           background-color: white;
           color: #ffbb00; } }
@@ -797,7 +799,8 @@ body {
     text-align: left;
     position: relative;
     padding-left: 5px;
-    margin-top: 30px; }
+    margin-top: 40px;
+    margin-bottom: 30px; }
     .cooperation__title {
       font-size: 30px; }
       @media screen and (min-width: 320px) {
@@ -870,3 +873,192 @@ body {
   @media (min-width: 1400px) {
     .cooperation {
       padding: 0 10%; } }
+
+.contact {
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, auto); }
+  .contact__title {
+    font-family: "Montserrat", sans-serif;
+    color: #000546;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: left;
+    position: relative;
+    padding-left: 5px;
+    margin-bottom: 30px; }
+    .contact__title {
+      font-size: 30px; }
+      @media screen and (min-width: 320px) {
+        .contact__title {
+          font-size: calc( 30px + 15 * ((100vw - 320px) / 880)); } }
+      @media screen and (min-width: 1200px) {
+        .contact__title {
+          font-size: 45px; } }
+    .contact__title:after {
+      content: "";
+      display: inline-block;
+      background-color: #ffbb00;
+      width: 1.2em;
+      height: 1.2em;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1; }
+  .contact__details {
+    margin-bottom: 40px;
+    font-family: "Roboto", sans-serif;
+    color: #000546;
+    font-weight: 400;
+    font-style: normal; }
+    .contact__details {
+      font-size: 16px; }
+      @media screen and (min-width: 320px) {
+        .contact__details {
+          font-size: calc( 16px + 4 * ((100vw - 320px) / 880)); } }
+      @media screen and (min-width: 1200px) {
+        .contact__details {
+          font-size: 20px; } }
+  .contact__text, .contact__address, .contact__mail, .contact__tel, .contact__fb {
+    display: block;
+    margin-bottom: 20px;
+    padding-left: 35px;
+    position: relative; }
+    .contact__text:before, .contact__address:before, .contact__mail:before, .contact__tel:before, .contact__fb:before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+      background-position: center; }
+  .contact__address:focus, .contact__address:active, .contact__address:visited, .contact__address:link, .contact__mail:focus, .contact__mail:active, .contact__mail:visited, .contact__mail:link, .contact__tel:focus, .contact__tel:active, .contact__tel:visited, .contact__tel:link, .contact__fb:focus, .contact__fb:active, .contact__fb:visited, .contact__fb:link {
+    color: #000546; }
+  .contact__address:hover, .contact__mail:hover, .contact__tel:hover, .contact__fb:hover {
+    color: #ffbb00; }
+  .contact__text--shop:before {
+    background-image: url(../img/shop.svg); }
+  .contact__text--delivery:before {
+    background-image: url(../img/truck.svg); }
+  .contact__text--card:before {
+    background-image: url(../img/credit_card.svg); }
+  .contact__address:before {
+    background-image: url(../img/location.svg); }
+  .contact__mail:before {
+    background-image: url(../img/envelope.svg); }
+  .contact__tel:before {
+    background-image: url(../img/phone.svg); }
+  .contact__fb:before {
+    background-image: url(../img/facebook.svg); }
+  @media (min-width: 650px) {
+    .contact {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      grid-column-gap: 60px; }
+      .contact__title:first-of-type {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2; }
+      .contact__title:last-of-type {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2; } }
+  @media (min-width: 1400px) {
+    .contact {
+      padding: 70px 10% 30px 10%; } }
+
+.form {
+  display: flex;
+  flex-direction: column; }
+  .form__item {
+    position: relative;
+    margin-bottom: 20px; }
+  .form__email, .form__message {
+    background: none;
+    border: 1px solid #c0c0c0;
+    border-radius: 3px;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    color: #000546; }
+    .form__email:invalid, .form__message:invalid {
+      border-color: #c0c0c0;
+      box-shadow: none; }
+    .form__email:focus, .form__message:focus {
+      border-color: #000546; }
+    .form__email:focus + label, .form__message:focus + label {
+      top: -8px;
+      font-size: 11px;
+      color: #000546; }
+    .form__email::placeholder, .form__message::placeholder {
+      color: transparent; }
+    .form__email:not(:placeholder-shown) + label, .form__message:not(:placeholder-shown) + label {
+      top: -8px;
+      font-size: 11px;
+      color: #000546; }
+  .form__email {
+    height: 50px; }
+  .form__label {
+    font-family: "Roboto", sans-serif;
+    color: #c0c0c0;
+    font-weight: 400;
+    display: block;
+    position: absolute;
+    background-color: white;
+    min-width: 30%;
+    top: 15px;
+    left: 15px;
+    transition: 0.2s ease-out all;
+    padding: 0 7px;
+    cursor: text; }
+    .form__label {
+      font-size: 13px; }
+      @media screen and (min-width: 320px) {
+        .form__label {
+          font-size: calc( 13px + 0 * ((100vw - 320px) / 880)); } }
+      @media screen and (min-width: 1200px) {
+        .form__label {
+          font-size: 13px; } }
+  .form__message {
+    resize: none; }
+  .form__info {
+    font-family: "Roboto", sans-serif;
+    color: #000546;
+    font-weight: 400;
+    margin-bottom: 20px; }
+    .form__info {
+      font-size: 16px; }
+      @media screen and (min-width: 320px) {
+        .form__info {
+          font-size: calc( 16px + 4 * ((100vw - 320px) / 880)); } }
+      @media screen and (min-width: 1200px) {
+        .form__info {
+          font-size: 20px; } }
+    .form__info a {
+      color: #ffbb00; }
+      .form__info a:link, .form__info a:visited, .form__info a:active {
+        color: #ffbb00; }
+      .form__info a:hover {
+        color: #000546;
+        text-decoration: underline; }
+  .form__submit {
+    width: 120px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: #ffbb00;
+    border: none;
+    display: block;
+    color: white;
+    font-size: 13.33333px;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    box-shadow: 1px 1px 6px 0px rgba(66, 66, 66, 0.62);
+    cursor: pointer; }
+    .form__submit:hover {
+      background-color: #d19900; }
