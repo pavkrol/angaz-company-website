@@ -272,7 +272,12 @@
           >
         </address>
         <h2 class="contact__title">Napisz do nas</h2>
-        <form action="" class="contact__form form">
+        <form
+          id="contact_form"
+          class="contact__form form"
+          method="post"
+          action="scripts/send.php"
+        >
           <div class="form__item">
             <input
               class="form__email"
@@ -280,6 +285,8 @@
               name="email"
               type="text"
               placeholder="Twój adres e-mail"
+              data-error="Wpisz poprawny e-mail"
+              pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
               required
             />
             <label class="form__label" for="email">Twój adres e-mail</label>
@@ -291,27 +298,41 @@
               name="message"
               rows="6"
               placeholder="Treść wiadomości"
+              data-error="Wiadomość nie może być pusta"
+              pattern=".+"
               required
             ></textarea>
             <label class="form__label" for="message">Treść wiadomości</label>
           </div>
           <p class="form__info">
             Klikając "wyślij" akceptujesz zasady przetwarzania danych
-            zamieszczone pod <a href="#" class="form__link">linkiem</a>.
-            Informujemy, że wszelkie dane podane w zgłoszeniu będą
-            wykorzystywane jedynie do obsługi zapytania i nie będą przekazywane
-            żadnym innym podmiotom.
+            zamieszczone pod
+            <a href="./docs/ANGAZ_RODO.pdf" target="_blank" class="form__link"
+              >linkiem</a
+            >. Informujemy, że wszelkie dane podane w zgłoszeniu będą
+            wykorzystywane jedynie do obsługi zapytania i ewentualnej realizacji
+            zamówienia.
           </p>
+          <div class="form__item honey-row">
+            <label for="honey"
+              >Jeżeli jesteś człowiekiem, nie wypełniaj tego pola</label
+            >
+            <input type="text" name="honey" />
+          </div>
           <input
             class="form__submit"
             id="form_submit"
-            type="button"
+            type="submit"
             value="wyślij"
           />
         </form>
       </section>
+      <footer class="footer">
+        ©2019 AN-GAZ Dystrybucja Gazu / wykonanie: Paweł Król
+      </footer>
     </main>
     <script src="./scripts/slider.js"></script>
     <script src="./scripts/mobile_menu.js"></script>
+    <script src="./scripts/form.js"></script>
   </body>
 </html>

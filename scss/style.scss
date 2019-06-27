@@ -854,6 +854,7 @@ body {
     margin-bottom: 40px;
     @include text(16px, 20px, $dark);
     font-style: normal;
+    padding-right: 50px;
   }
   &__text,
   &__address,
@@ -862,14 +863,14 @@ body {
   &__fb {
     display: block;
     margin-bottom: 20px;
-    padding-left: 35px;
+    padding-left: 40px;
     position: relative;
     &:before {
       content: "";
       display: block;
       position: absolute;
       left: 0;
-      top: 0;
+      top: 2px;
       width: 24px;
       height: 24px;
       background-size: contain;
@@ -969,6 +970,11 @@ body {
       color: $dark;
     }
   }
+
+  .error {
+    border-color: $error;
+  }
+
   &__email {
     height: 50px;
   }
@@ -986,8 +992,6 @@ body {
   }
   &__message {
     resize: none;
-  }
-  &__submit {
   }
   &__info {
     @include text(16px, 20px, $dark);
@@ -1007,5 +1011,90 @@ body {
   }
   &__submit {
     @include button(120px, 40px);
+  }
+  &-send-success {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 1px solid #eee;
+    color: #333;
+    padding: 10rem 0;
+    margin: 3rem auto;
+    max-width: 40rem;
+  }
+
+  &-send-success strong {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  &-send-success span {
+    font-size: 1rem;
+    color: #888;
+    font-weight: normal;
+    display: block;
+  }
+  .honey-row {
+    display: none;
+  }
+  .field-error {
+    color: $error;
+    padding: 10px 0;
+    font-size: 14px;
+    font-family: $text-font;
+  }
+}
+
+.footer {
+  @include text(12px, 14px, $dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: $grey;
+  padding: 0 30px;
+  text-align: center;
+}
+
+.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.loading::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-right-color: rgba(0, 0, 0, 0.7);
+  transform: translate(-50%, -50%) rotate(0deg);
+  content: "";
+  animation: rotateLoading 0.3s infinite linear;
+  z-index: 10;
+}
+
+@keyframes rotateLoading {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.send-error {
+  text-align: center;
+  display: block;
+  font-family: sans-serif;
+  padding: 10px 20px;
+  color: red;
+  @media (min-width: 500px) {
+    display: inline-block;
+    text-align: left;
   }
 }

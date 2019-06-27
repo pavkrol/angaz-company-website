@@ -911,7 +911,8 @@ body {
     font-family: "Roboto", sans-serif;
     color: #000546;
     font-weight: 400;
-    font-style: normal; }
+    font-style: normal;
+    padding-right: 50px; }
     .contact__details {
       font-size: 16px; }
       @media screen and (min-width: 320px) {
@@ -923,14 +924,14 @@ body {
   .contact__text, .contact__address, .contact__mail, .contact__tel, .contact__fb {
     display: block;
     margin-bottom: 20px;
-    padding-left: 35px;
+    padding-left: 40px;
     position: relative; }
     .contact__text:before, .contact__address:before, .contact__mail:before, .contact__tel:before, .contact__fb:before {
       content: "";
       display: block;
       position: absolute;
       left: 0;
-      top: 0;
+      top: 2px;
       width: 24px;
       height: 24px;
       background-size: contain;
@@ -998,6 +999,8 @@ body {
       top: -8px;
       font-size: 11px;
       color: #000546; }
+  .form .error {
+    border-color: #e01546; }
   .form__email {
     height: 50px; }
   .form__label {
@@ -1062,3 +1065,84 @@ body {
     cursor: pointer; }
     .form__submit:hover {
       background-color: #d19900; }
+  .form-send-success {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 1px solid #eee;
+    color: #333;
+    padding: 10rem 0;
+    margin: 3rem auto;
+    max-width: 40rem; }
+  .form-send-success strong {
+    display: block;
+    margin-bottom: 0.5rem; }
+  .form-send-success span {
+    font-size: 1rem;
+    color: #888;
+    font-weight: normal;
+    display: block; }
+  .form .honey-row {
+    display: none; }
+  .form .field-error {
+    color: #e01546;
+    padding: 10px 0;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif; }
+
+.footer {
+  font-family: "Roboto", sans-serif;
+  color: #000546;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: #f5f5f5;
+  padding: 0 30px;
+  text-align: center; }
+  .footer {
+    font-size: 12px; }
+    @media screen and (min-width: 320px) {
+      .footer {
+        font-size: calc( 12px + 2 * ((100vw - 320px) / 880)); } }
+    @media screen and (min-width: 1200px) {
+      .footer {
+        font-size: 14px; } }
+
+.loading {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.5; }
+
+.loading::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-right-color: rgba(0, 0, 0, 0.7);
+  transform: translate(-50%, -50%) rotate(0deg);
+  content: "";
+  animation: rotateLoading 0.3s infinite linear;
+  z-index: 10; }
+
+@keyframes rotateLoading {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg); }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg); } }
+
+.send-error {
+  text-align: center;
+  display: block;
+  font-family: sans-serif;
+  padding: 10px 20px;
+  color: red; }
+  @media (min-width: 500px) {
+    .send-error {
+      display: inline-block;
+      text-align: left; } }
