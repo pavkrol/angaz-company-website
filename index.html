@@ -9,6 +9,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <title>AN-GAZ | Butle Gazowe</title>
   </head>
   <body>
@@ -28,13 +29,13 @@
         <nav id="header__navigation" class="header__navigation navigation">
           <ul>
             <li class="navigation__item">
-              <a href="#" class="navigation__link">oferta</a>
+              <a href="#services" class="navigation__link">oferta</a>
             </li>
             <li class="navigation__item">
-              <a href="#" class="navigation__link">współpraca</a>
+              <a href="#cooperation" class="navigation__link">współpraca</a>
             </li>
             <li class="navigation__item">
-              <a href="#" class="navigation__link">kontakt</a>
+              <a href="#contact" class="navigation__link">kontakt</a>
             </li>
           </ul>
         </nav>
@@ -42,22 +43,26 @@
     </header>
     <main>
       <section class="hero">
-        <h1 class="hero__title">
+        <h1 class="hero__title" data-aos="fade-right">
           <p>Twój dostawca</p>
           <p>gazu LPG</p>
         </h1>
-        <a href="#" class="hero__action">Zamów</a>
-        <img src="./img/butle.png" alt="gas cylinders" class="hero__photo" />
+        <a
+          href="#contact"
+          class="hero__action"
+          data-aos="fade-right"
+          data-aos-once="true"
+          >Zamów</a
+        >
+        <img
+          src="./img/butle.png"
+          alt="gas cylinders"
+          class="hero__photo"
+          data-aos="fade-left"
+          data-aos-once="true"
+        />
       </section>
       <section id="slider" class="slider">
-        <button
-          id="slider__bttn--left"
-          class="slider__bttn slider__bttn--left"
-        ></button>
-        <button
-          id="slider__bttn--right"
-          class="slider__bttn slider__bttn--right"
-        ></button>
         <div class="slider__item slider__item--left">
           <img
             src="./img/propan_butan.png"
@@ -65,11 +70,10 @@
             class="slider__photo"
           />
           <div class="slider__infobox infobox">
-            <h2 class="infobox__title">Butle 11 kg</h2>
+            <h2 class="infobox__title">Butle 11 kg propan-butan</h2>
             <p class="infobox__description">
               Wykonana ze stali o wysokiej wytrzymałości, trwałości,
-              formowalności. Możliwość zakupu butli napełnionej gazem propan lub
-              propan-butan.
+              formowalności. Możliwość zamówienia butli z kołnierzem lub bez
             </p>
             <button class="infobox__more">Więcej</button>
           </div>
@@ -83,9 +87,9 @@
           <div class="slider__infobox infobox">
             <h2 class="infobox__title">Butle Hexagon Ragasco</h2>
             <p class="infobox__description">
-              Najlżejsze z butli dostępnych na rynku. Półprzezroczysta budowa -
-              zawsze widać ile gazu zostało w butli. Podłączenie za pomocą
-              wygodnego reduktora click-on.
+              Najlżejsze z butli dostępnych na rynku. Bezpieczna i wygodna w
+              użytkowaniu. Dzięki półprzezroczystej obudowie zawsze wiesz ile
+              gazu zostało w butli
             </p>
             <button class="infobox__more">Więcej</button>
           </div>
@@ -115,9 +119,8 @@
           <div class="slider__infobox infobox">
             <h2 class="infobox__title">Butle propan 10 kg</h2>
             <p class="infobox__description">
-              Wyposażona w specjalny syfon zwiększający efektywne wykorzystanie
-              gazu z butli i lepszą pracę wózka, nawet w trudnych warunkach
-              atmosferycznych
+              Wykonana ze stali o wysokiej wytrzymałości, trwałości,
+              formowalności. Butle napełnione wydajnym gazem propan
             </p>
             <button class="infobox__more">Więcej</button>
           </div>
@@ -131,13 +134,70 @@
           <div class="slider__infobox infobox">
             <h2 class="infobox__title">Butle propan 33 kg</h2>
             <p class="infobox__description">
-              Wyposażona w specjalny syfon zwiększający efektywne wykorzystanie
-              gazu z butli i lepszą pracę wózka, nawet w trudnych warunkach
-              atmosferycznych
+              Butle 33 kg najlepiej sprawdzą się przy dużym poborze gazu. Butle
+              napełnione wydajnym gazem propan.
             </p>
             <button class="infobox__more">Więcej</button>
           </div>
         </div>
+        <div class="slider__item slider__item--right">
+          <img
+            src="./img/horeca.png"
+            alt="butla gazowa horeca light"
+            class="slider__photo"
+          />
+          <div class="slider__infobox infobox">
+            <h2 class="infobox__title">Butle Greengas Horeca</h2>
+            <p class="infobox__description">
+              Butle kompozytowe sprawdzą się najlepiej w gospodarstwach
+              domowych, gastronomii i w promiennikach gazowych. Wygodne, lekkie
+              i bezpieczne.
+            </p>
+            <button class="infobox__more">Więcej</button>
+          </div>
+        </div>
+        <div class="slider__item slider__item--right">
+          <img
+            src="./img/turystyka.png"
+            alt="turystyczne butle gazowe 2kg, 3kg, 5kg"
+            class="slider__photo"
+          />
+          <div class="slider__infobox infobox">
+            <h2 class="infobox__title">Butle turystyczne</h2>
+            <p class="infobox__description">
+              Butle turystyczne są małe, lekkie i sprawdzą się podczas różnych
+              zastosowań w plenerze.
+            </p>
+            <button class="infobox__more">Więcej</button>
+          </div>
+        </div>
+        <div class="slider__item slider__item--right">
+          <img
+            src="./img/co2.png"
+            alt="butle co2, azot, mieszana argon/co2"
+            class="slider__photo"
+          />
+          <div class="slider__infobox infobox">
+            <h2 class="infobox__title">
+              Butle z gazem CO<span class="sub-index">2</span>, AZOT,
+              Argon/CO<span class="sub-index">2</span>
+            </h2>
+            <p class="infobox__description">
+              Wymieniamy także butle z gazem CO<span class="sub-index">2</span>,
+              azot, mieszanka argonu i CO<span class="sub-index">2</span>. W
+              celu sprawdzenia dostępnosci prosimy o wcześniejszy kontakt
+              telefoniczny.
+            </p>
+          </div>
+        </div>
+        <button
+          id="slider__bttn--left"
+          class="slider__bttn slider__bttn--left"
+        ></button>
+        <button
+          id="slider__bttn--right"
+          class="slider__bttn slider__bttn--right"
+        ></button>
       </section>
       <div class="slider__dots dots">
         <div class="dots__item"></div>
@@ -145,8 +205,16 @@
         <div class="dots__item"></div>
         <div class="dots__item"></div>
         <div class="dots__item"></div>
+        <div class="dots__item"></div>
+        <div class="dots__item"></div>
+        <div class="dots__item"></div>
       </div>
-      <section class="services">
+      <section
+        id="services"
+        class="services"
+        data-aos="fade-up"
+        data-aos-once="true"
+      >
         <h2 class="services__title">Nasze usługi</h2>
         <div class="services__wrapper">
           <h3 class="services__subtitle services__subtitle--delivery">
@@ -185,7 +253,7 @@
           </p>
         </div>
       </section>
-      <section class="heaters">
+      <section class="heaters" data-aos="fade-up" data-aos-once="true">
         <div class="heaters__photo"></div>
         <h2 class="heaters__title">Parasole grzewcze</h2>
         <p class="heaters__text">
@@ -209,7 +277,7 @@
           ogrodach.
         </p>
       </section>
-      <section class="ragasco">
+      <section class="ragasco" data-aos="fade-up" data-aos-once="true">
         <div class="ragasco__photo"></div>
         <h2 class="ragasco__title">Butle Hexagon Ragasco</h2>
         <p class="ragasco__text">
@@ -222,25 +290,32 @@
         </p>
         <button class="ragasco__button">Dowiedz się więcej</button>
       </section>
-      <section class="cooperation">
+      <section
+        id="cooperation"
+        class="cooperation"
+        data-aos="fade-up"
+        data-aos-once="true"
+      >
         <div class="cooperation__photo"></div>
         <h2 class="cooperation__title">Współpraca</h2>
         <p class="cooperation__text">
           Naszym stałym klientom oferujemy możliwość wypożyczenia butli gazowych
-          na atrakcyjnych warunkach. Ponadto nasz cennik zawsze dostosowujemy
-          indywidualnie do każdego klienta. W przypadku regularnych zamówień
-          proponujemy atrakcyjne rabaty. W celu ustaleniu szczegółów zachęcamy
-          do kontaktu.
+          na atrakcyjnych warunkach. W razie potrzeby jesteśmy w stanie
+          wypożyczyć także specjalna klatkę do magazynowania butli.
         </p>
         <p class="cooperation__text">
-          Naszym stałym klientom oferujemy możliwość wypożyczenia butli gazowych
-          na atrakcyjnych warunkach. Ponadto nasz cennik zawsze dostosowujemy
-          indywidualnie do każdego klienta. W przypadku regularnych zamówień
-          proponujemy atrakcyjne rabaty. W celu ustaleniu szczegółów zachęcamy
-          do kontaktu.
+          Nasz cennik zawsze dostosowujemy indywidualnie do każdego klienta. W
+          przypadku regularnych zamówień proponujemy rabaty. Zapewniamy ciągłość
+          dostaw i wysoką jakość usług. W celu ustaleniu szczegółów zachęcamy do
+          kontaktu.
         </p>
       </section>
-      <section class="contact">
+      <section
+        id="contact"
+        class="contact"
+        data-aos="fade-up"
+        data-aos-once="true"
+      >
         <h2 class="contact__title">Kontakt</h2>
         <address class="contact__details">
           <p class="contact__text contact__text--shop">
@@ -334,5 +409,10 @@
     <script src="./scripts/slider.js"></script>
     <script src="./scripts/mobile_menu.js"></script>
     <script src="./scripts/form.js"></script>
+    <script src="./scripts/navigation_behaviour.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

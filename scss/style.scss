@@ -12,6 +12,7 @@
 
 body {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .header {
@@ -22,6 +23,7 @@ body {
   position: fixed;
   z-index: 2;
   top: 0;
+  transition: background-color 0.2s ease-in-out;
   &__wrapper {
     width: 100%;
     height: 100%;
@@ -52,6 +54,10 @@ body {
   @media (min-width: 1200px) {
     background-color: transparent;
     color: white;
+    &--scrolled {
+      background-color: white;
+      color: $dark;
+    }
   }
 }
 
@@ -123,7 +129,7 @@ body {
   }
   &__link {
     display: block;
-
+    &:link,
     &:active,
     &:focus,
     &:visited {
@@ -185,6 +191,8 @@ body {
       letter-spacing: 0.1em;
     }
     &__link {
+      transition: color 0 ease-in 0.3s;
+      &:link,
       &:active,
       &:focus,
       &:visited {
@@ -193,6 +201,12 @@ body {
       &:hover {
         color: $yellow;
         background: transparent;
+      }
+      &--scrolled:link,
+      &--scrolled:active,
+      &--scrolled:focus,
+      &--scrolled:visited {
+        color: $dark;
       }
     }
   }
@@ -252,7 +266,7 @@ body {
     padding: 0 12%;
   }
   @media (min-width: 1200px) {
-    background-image: url(../img/grass2.jpg);
+    background-image: url(../img/grass_bcg.jpg);
     margin-top: 0;
     padding-top: 150px;
     height: 100vh;
@@ -287,18 +301,25 @@ body {
     height: calc(100vw / 2 + 3px);
     width: 8%;
     background-color: transparent;
-    opacity: 0.15;
+    background-repeat: no-repeat;
+    background-size: 30px;
+    opacity: 0.2;
     border: none;
     z-index: 2;
     cursor: pointer;
     &:hover {
-      background-color: black;
+      opacity: 0.8;
     }
+
     &--left {
       left: 20px;
+      background-image: url(../img/left-arrow.svg);
+      background-position: left center;
     }
     &--right {
       right: 10px;
+      background-image: url(../img/right-arrow.svg);
+      background-position: right center;
     }
   }
   &__item {
@@ -339,12 +360,12 @@ body {
       top: -120px;
       z-index: 1;
       &--right {
-        transform: translateX(35%) scale(0.6);
+        transform: translateX(25%) scale(0.8);
         z-index: 0;
         filter: blur(1px);
       }
       &--left {
-        transform: translateX(-35%) scale(0.6);
+        transform: translateX(-25%) scale(0.8);
         z-index: 0;
         filter: blur(1px);
       }
@@ -354,6 +375,7 @@ body {
       height: calc(100vw / 3);
     }
     &__bttn {
+      background-size: 40px;
       &--left {
         left: calc(20% + 20px);
         height: calc(100vw / 3 + 3px);
@@ -524,7 +546,7 @@ body {
     }
   }
   &__text {
-    @include text(16px, 20px, $dark);
+    @include text(16px, 18px, $dark);
   }
   @media (min-width: 750px) {
     grid-template-columns: 1fr 1fr;
@@ -539,8 +561,11 @@ body {
       padding: 0 25% 0 0;
     }
   }
+  @media (min-width: 800px) {
+    padding-top: 90px;
+  }
   @media (min-width: 1400px) {
-    padding: 50px 10%;
+    padding: 90px 10%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 60px 1fr;
     grid-row-gap: 15px;
@@ -625,7 +650,7 @@ body {
   }
   &__text {
     margin-bottom: 30px;
-    @include text(16px, 20px, $dark);
+    @include text(16px, 18px, $dark);
   }
   &__photo {
     background: url(../img/heaters.jpg) no-repeat;
@@ -701,7 +726,7 @@ body {
   }
   &__text {
     margin-bottom: 30px;
-    @include text(16px, 20px, $dark);
+    @include text(16px, 18px, $dark);
   }
   &__photo {
     background: url(../img/ragasco_butle.png) no-repeat;
@@ -775,7 +800,7 @@ body {
   }
   &__text {
     margin-bottom: 30px;
-    @include text(16px, 20px, $dark);
+    @include text(16px, 18px, $dark);
   }
   &__photo {
     background: url(../img/handshake.jpg) no-repeat;
@@ -798,7 +823,7 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 30vw repeat(3, auto);
     grid-gap: 30px;
-    margin-top: 60px;
+    padding-top: 60px;
     &__text {
       grid-column: span 2;
       margin-bottom: 0;
@@ -807,6 +832,9 @@ body {
       margin-left: 10%;
       margin-top: 0;
     }
+  }
+  @media (min-width: 800px) {
+    padding-top: 90px;
   }
   @media (min-width: 1000px) {
     grid-template-rows: repeat(4, auto);
@@ -823,7 +851,7 @@ body {
     }
   }
   @media (min-width: 1400px) {
-    padding: 0 10%;
+    padding: 90px 10% 0 10%;
   }
 }
 
@@ -852,7 +880,7 @@ body {
   }
   &__details {
     margin-bottom: 40px;
-    @include text(16px, 20px, $dark);
+    @include text(16px, 18px, $dark);
     font-style: normal;
     padding-right: 50px;
   }
@@ -927,8 +955,11 @@ body {
       }
     }
   }
+  @media (min-width: 800px) {
+    padding-top: 90px;
+  }
   @media (min-width: 1400px) {
-    padding: 70px 10% 30px 10%;
+    padding: 90px 10% 30px 10%;
   }
 }
 
@@ -994,7 +1025,7 @@ body {
     resize: none;
   }
   &__info {
-    @include text(16px, 20px, $dark);
+    @include text(12px, 14px, $dark);
     margin-bottom: 20px;
     a {
       color: $yellow;
@@ -1097,4 +1128,9 @@ body {
     display: inline-block;
     text-align: left;
   }
+}
+
+.sub-index {
+  font-size: 0.7em;
+  vertical-align: sub;
 }
