@@ -470,6 +470,37 @@ body {
   }
 }
 
+.product {
+  position: fixed;
+  padding: 30px 20px;
+  margin: 10px;
+  width: calc(100% - 20px);
+  min-height: 300px;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  background-color: $grey;
+  &__title {
+    @include subtitle(18px, 22px, $dark);
+    margin-bottom: 20px;
+  }
+  &__info {
+    @include text(13px, 15px, $dark);
+    margin-bottom: 30px;
+  }
+  &__table {
+    @include text(13px, 15px, $dark);
+    border-collapse: collapse;
+    width: 100%;
+    th,
+    td {
+      border: 1px solid $dark;
+      padding: 5px;
+    }
+  }
+}
+
 .services {
   padding: 30px 30px;
   display: grid;
