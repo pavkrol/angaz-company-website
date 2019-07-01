@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto|Montserrat:400,500,600,700|Poppins&display=swap"
       rel="stylesheet"
@@ -12,7 +13,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <title>AN-GAZ | Butle Gazowe</title>
   </head>
-  <body>
+  <body id="body">
     <header class="header">
       <div class="header__wrapper">
         <img
@@ -75,7 +76,7 @@
               Wykonana ze stali o wysokiej wytrzymałości, trwałości,
               formowalności. Możliwość zamówienia butli z kołnierzem lub bez
             </p>
-            <button class="infobox__more">Więcej</button>
+            <button class="infobox__more" data-number="0">Więcej</button>
           </div>
         </div>
         <div class="slider__item">
@@ -91,7 +92,7 @@
               użytkowaniu. Dzięki półprzezroczystej obudowie zawsze wiesz ile
               gazu zostało w butli
             </p>
-            <button class="infobox__more">Więcej</button>
+            <button class="infobox__more" data-number="1">Więcej</button>
           </div>
         </div>
         <div class="slider__item slider__item--right">
@@ -107,7 +108,7 @@
               gazu z butli i lepszą pracę wózka, nawet w trudnych warunkach
               atmosferycznych
             </p>
-            <button class="infobox__more">Więcej</button>
+            <button class="infobox__more" data-number="2">Więcej</button>
           </div>
         </div>
         <div class="slider__item slider__item--right">
@@ -122,7 +123,7 @@
               Wykonana ze stali o wysokiej wytrzymałości, trwałości,
               formowalności. Butle napełnione wydajnym gazem propan
             </p>
-            <button class="infobox__more">Więcej</button>
+            <button class="infobox__more" data-number="3">Więcej</button>
           </div>
         </div>
         <div class="slider__item slider__item--right">
@@ -137,7 +138,7 @@
               Butle 33 kg najlepiej sprawdzą się przy dużym poborze gazu. Butle
               napełnione wydajnym gazem propan.
             </p>
-            <button class="infobox__more">Więcej</button>
+            <button class="infobox__more" data-number="4">Więcej</button>
           </div>
         </div>
         <div class="slider__item slider__item--right">
@@ -153,7 +154,7 @@
               domowych, gastronomii i w promiennikach gazowych. Wygodne, lekkie
               i bezpieczne.
             </p>
-            <button class="infobox__more">Więcej</button>
+            <button class="infobox__more" data-number="5">Więcej</button>
           </div>
         </div>
         <div class="slider__item slider__item--right">
@@ -168,7 +169,7 @@
               Butle turystyczne są małe, lekkie i sprawdzą się podczas różnych
               zastosowań w plenerze.
             </p>
-            <button class="infobox__more">Więcej</button>
+            <button class="infobox__more" data-number="6">Więcej</button>
           </div>
         </div>
         <div class="slider__item slider__item--right">
@@ -198,7 +199,8 @@
           id="slider__bttn--right"
           class="slider__bttn slider__bttn--right"
         ></button>
-        <div class="product" data-number="0">
+        <div class="product__overlay"></div>
+        <div class="product">
           <h3 class="product__title">Butle 11 kg propan-butan</h3>
           <p class="product__info">
             Gaz w naszych butlach jest wysokiej jakości i pochodzi tylko ze
@@ -212,7 +214,7 @@
           <table class="product__table">
             <thead>
               <tr>
-                <th colspan="2">Podstawowe parametry butli</th>
+                <th colspan="2">Podstawowe parametry butli*</th>
               </tr>
             </thead>
             <tbody>
@@ -234,8 +236,251 @@
               </tr>
             </tbody>
           </table>
-          <p class="product__note"></p>
+          <p class="product__note">
+            *podane wymiary są orientacyjne, mogą nieznacznie różnić się w
+            poszczególnych egzemplarzach. Waga pustej butli jest zawsze zapisana
+            na kołnierzu lub w górnej części butli gazowej.
+          </p>
+          <button class="product__close"></button>
         </div>
+        <div class="product">
+          <h3 class="product__title">Butle Hexagon Ragasco</h3>
+          <p class="product__info">
+            Butle kompozytowe Hexagon Ragasco sprawdzą się idealnie w
+            gospodarstwach domowych, gastronomii i w promiennikach gazowych.
+            Jest to wygodna i bezpieczna alternatywa dla gazu ziemnego lub
+            standardowych, stalowych butli gazowych. Są to najlżejsze z butli
+            dostępnych na rynku (waga pustej butli to tylko 5,3 kg )
+            Półprzezroczysta obudowa sprawia, że zawsze zobaczysz ile gazu
+            zostało w butli. Podłączenie jest bardzo łatwe dzięki wygodnemu
+            reduktorowi click-on. Butle nie rdzewieją, więc nie pozostawiają
+            zanieczyszczeń w miejscach, gdzie są używane.
+          </p>
+          <table class="product__table">
+            <thead>
+              <tr>
+                <th colspan="2">Podstawowe parametry butli*</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ilość gazu w butli</td>
+                <td>10 kg</td>
+              </tr>
+              <tr>
+                <td>Waga butli</td>
+                <td>5,3 kg</td>
+              </tr>
+              <tr>
+                <td>Wysokość</td>
+                <td>57 cm</td>
+              </tr>
+              <tr>
+                <td>Średnica</td>
+                <td>30 cm</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="product__note">
+            *podane wymiary są orientacyjne, mogą nieznacznie różnić się w
+            poszczególnych egzemplarzach. Waga pustej butli jest zawsze zapisana
+            na kołnierzu lub w górnej części butli gazowej.
+          </p>
+          <button class="product__close"></button>
+        </div>
+        <div class="product">
+            <h3 class="product__title">Butle do wózków widłowych</h3>
+            <p class="product__info">
+                Mogą być stosowane do wszystkich typów wózków widłowych. Antyerozyjna warstwa wewnętrzna sprawia, że butle są wytrzymałe i zabezpiecza przed zanieczyszczeniami gazu. Napełniane gazem propan-butan.
+            </p>
+            <table class="product__table">
+              <thead>
+                <tr>
+                  <th colspan="2">Podstawowe parametry butli*</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ilość gazu w butli</td>
+                  <td>11 kg</td>
+                </tr>
+                <tr>
+                  <td>Waga butli</td>
+                  <td>10-13 kg</td>
+                </tr>
+                <tr>
+                  <td>Wysokość</td>
+                  <td>59,5 cm</td>
+                </tr>
+                <tr>
+                  <td>Średnica</td>
+                  <td>30 cm</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="product__note">
+              *podane wymiary są orientacyjne, mogą nieznacznie różnić się w
+              poszczególnych egzemplarzach. Waga pustej butli jest zawsze zapisana
+              na kołnierzu lub w górnej części butli gazowej.
+            </p>
+            <button class="product__close"></button>
+          </div>
+          <div class="product">
+              <h3 class="product__title">Butle propan 10 kg</h3>
+              <p class="product__info">
+                  Przy pracy w temperaturze poniżej 0 st. C zleca się stosowanie gazu propan. Znajduje on zastosowanie m.in. w spawaniu, cięciu, budownictwie drogowym, hartowaniu, suszeniu. Gaz propan jest wydajniejszy od gazu propan-butan, więc z powodzeniem można go wykorzystać do gotowania oraz ogrzewania.
+
+              </p>
+              <table class="product__table">
+                <thead>
+                  <tr>
+                    <th colspan="2">Podstawowe parametry butli*</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ilość gazu w butli</td>
+                    <td>10 kg</td>
+                  </tr>
+                  <tr>
+                    <td>Waga butli</td>
+                    <td>10-13 kg</td>
+                  </tr>
+                  <tr>
+                    <td>Wysokość</td>
+                    <td>59,5 cm</td>
+                  </tr>
+                  <tr>
+                    <td>Średnica</td>
+                    <td>30 cm</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="product__note">
+                *podane wymiary są orientacyjne, mogą nieznacznie różnić się w
+                poszczególnych egzemplarzach. Waga pustej butli jest zawsze zapisana
+                na kołnierzu lub w górnej części butli gazowej.
+              </p>
+              <button class="product__close"></button>
+            </div>
+            <div class="product">
+                <h3 class="product__title">Butle propan 10 kg</h3>
+                <p class="product__info">
+                    Przy pracy w temperaturze poniżej 0 st. C zleca się stosowanie gazu propan. Znajduje on zastosowanie m.in. w spawaniu, cięciu, budownictwie drogowym, hartowaniu, suszeniu. Gaz propan jest wydajniejszy od gazu propan-butan, więc z powodzeniem można go wykorzystać do gotowania oraz ogrzewania.
+                </p>
+                <p class="product__info">
+                    Butle 33 kg najlepiej sprawdzą się przy dużym poborze gazu. Duża pojemność butli zapewnia ciągłość poboru gazu. Przy podłączeniu dwóch butli za pomocą specjalnego adaptera, który automatycznie przełącza pobór z butli pustej na pełną, jest to świetne rozwiązanie zastępcze dla instalacji zbiornikowej na gaz płynny.
+                </p>
+                <table class="product__table">
+                  <thead>
+                    <tr>
+                      <th colspan="2">Podstawowe parametry butli*</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Ilość gazu w butli</td>
+                      <td>33 kg</td>
+                    </tr>
+                    <tr>
+                      <td>Waga butli</td>
+                      <td>28 kg</td>
+                    </tr>
+                    <tr>
+                      <td>Wysokość</td>
+                      <td>125 cm</td>
+                    </tr>
+                    <tr>
+                      <td>Średnica</td>
+                      <td>32 cm</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p class="product__note">
+                  *podane wymiary są orientacyjne, mogą nieznacznie różnić się w
+                  poszczególnych egzemplarzach. Waga pustej butli jest zawsze zapisana
+                  na kołnierzu lub w górnej części butli gazowej.
+                </p>
+                <button class="product__close"></button>
+              </div>
+              <div class="product">
+                  <h3 class="product__title">Butle Greengas Horeca</h3>
+                  <p class="product__info">
+                      Butle kompozytowe sprawdzą się najlepiej w gospodarstwach domowych, gastronomii i w promiennikach gazowych. Jest to wygodna i bezpieczna alternatywa dla gazu ziemnego lub standardowych, stalowych butli gazowych. Podłączenie jest bardzo łatwe dzięki wygodnemu reduktorowi click-on. Butle są o prawie połowę lżejsze od zwykłych butli stalowych (pusta butla waży tylko 6,8 kg).
+
+                  </p>
+                  <p class="product__info">
+                      Napełniane są wyłącznie gazem propan.
+                  </p>
+                  <table class="product__table">
+                    <thead>
+                      <tr>
+                        <th colspan="2">Podstawowe parametry butli*</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Ilość gazu w butli</td>
+                        <td>10 kg</td>
+                      </tr>
+                      <tr>
+                        <td>Waga butli</td>
+                        <td>6,8 kg</td>
+                      </tr>
+                      <tr>
+                        <td>Wysokość</td>
+                        <td>59,5 cm</td>
+                      </tr>
+                      <tr>
+                        <td>Średnica</td>
+                        <td>30 cm</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="product__note">
+                    *podane wymiary są orientacyjne, mogą nieznacznie różnić się w
+                    poszczególnych egzemplarzach. Waga pustej butli jest zawsze zapisana
+                    na kołnierzu lub w górnej części butli gazowej.
+                  </p>
+                  <button class="product__close"></button>
+                </div>
+                <div class="product">
+                    <h3 class="product__title">Butle turystyczne</h3>
+                    <p class="product__info">
+                        Butle turystyczne są małe, lekkie i sprawdzą się podczas różnych zastosowań w plenerze - gotowanie, grillowanie czy ogrzewanie. Posiadamy w ofercie butle o pojemnosci 2 kg, 3 kg i 5 kg.
+                    </p>
+                    <table class="product__table">
+                      <thead>
+                        <tr>
+                          <th colspan="2">Podstawowe parametry butli*</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Ilość gazu w butli</td>
+                          <td>2 kg / 3 kg / 5 kg</td>
+                        </tr>
+                        <tr>
+                          <td>Waga butli</td>
+                          <td>2,6 kg / 3,3 kg / 5 kg</td>
+                        </tr>
+                        <tr>
+                          <td>Wysokość</td>
+                          <td>25 cm / 32 cm / 50cm</td>
+                        </tr>
+                        <tr>
+                          <td>Średnica</td>
+                          <td>21,5 cm / 21,5 cm / 23 cm</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <p class="product__note">
+                      *podane wymiary są orientacyjne, mogą nieznacznie różnić się w
+                      poszczególnych egzemplarzach. Waga pustej butli jest zawsze zapisana
+                      na kołnierzu lub w górnej części butli gazowej.
+                    </p>
+                    <button class="product__close"></button>
+                  </div>
       </section>
       <div class="slider__dots dots">
         <div class="dots__item"></div>
@@ -326,7 +571,6 @@
           aby dowiedzieć się ile gazu zostało w butli. Ponadto odznaczają się
           najwyższym poziomem bezpieczeństwa na rynku.
         </p>
-        <button class="ragasco__button">Dowiedz się więcej</button>
       </section>
       <section
         id="cooperation"
@@ -448,6 +692,7 @@
     <script src="./scripts/mobile_menu.js"></script>
     <script src="./scripts/form.js"></script>
     <script src="./scripts/navigation_behaviour.js"></script>
+    <script src="./scripts/popup.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init();

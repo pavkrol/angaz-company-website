@@ -3,7 +3,6 @@ const nav_items = document.querySelectorAll(".navigation__link");
 
 window.addEventListener("scroll", e => {
   const scroll_position = window.scrollY;
-  console.log(scroll_position);
   if (screen.width > 1200) {
     if (scroll_position > 200) {
       [...nav_items].forEach(el => {

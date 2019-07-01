@@ -470,17 +470,39 @@ body {
   }
 }
 
+.noscroll {
+  overflow: hidden;
+}
+
 .product {
+  visibility: hidden;
+  opacity: 0;
   position: fixed;
   padding: 30px 20px;
-  margin: 10px;
+  margin: 20px 10px;
   width: calc(100% - 20px);
+  max-width: 450px;
   min-height: 300px;
+  max-height: calc(100vh - 40px);
   overflow-y: scroll;
-  top: 0;
   left: 0;
   z-index: 20;
   background-color: $grey;
+  top: 0;
+  transition: opacity 0.2s ease-in;
+  &__overlay {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba(42, 42, 42, 0.8);
+    margin: 0;
+    top: 0;
+    left: 0;
+    transition: opacity 0.2s ease-in;
+  }
   &__title {
     @include subtitle(18px, 22px, $dark);
     margin-bottom: 20px;
@@ -488,17 +510,53 @@ body {
   &__info {
     @include text(13px, 15px, $dark);
     margin-bottom: 30px;
+    line-height: 20px;
+  }
+  &__note {
+    @include text(12px, 12px, $dark);
+    margin-top: 10px;
+    max-width: 350px;
+    margin: 10px auto 0 auto;
   }
   &__table {
     @include text(13px, 15px, $dark);
     border-collapse: collapse;
     width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
     th,
     td {
       border: 1px solid $dark;
       padding: 5px;
+      height: 35px;
+    }
+    th {
+      letter-spacing: 0.1em;
     }
   }
+  &__close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/close.svg);
+    background-size: contain;
+    top: 15px;
+    right: 15px;
+    border: none;
+    cursor: pointer;
+  }
+  @media (min-width: 450px) {
+    margin: 10px 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: auto;
+  }
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 .services {
